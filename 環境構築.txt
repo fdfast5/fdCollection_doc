@@ -1,0 +1,51 @@
+① docker desktopインストール
+参考URL　https://qiita.com/gahoh/items/7b21377b5c9e3ffddf4a
+
+
+② gitインストール
+参考URL　https://qiita.com/suke_masa/items/404f06309bb32ca6c9c5
+
+
+③ git clone
+git bashで任意（プロジェクト作成）のディレクトリに移動し、git cloneでdocker開発環境を取得
+
+$ git clone https://github.com/fdfast5/fdCollection.git
+
+
+④ dockerイメージ取得
+nodeイメージ
+$ docker pull node:16-alpine
+
+pythonイメージ
+$ docker pull python:3.9-slim-buster
+
+
+⑤ docker環境構築
+docker-compose.ymlが置かれているディレクトリに移動し、以下のコマンドでコンテナを作成し、起動する
+
+$ docker-compose up -d --build
+
+
+⑥ docker内server環境確認
+以下コマンドでserverコンテナに入り、サーバーが起動できているか確認
+
+$ winpty docker-compose exec server bash
+
+$ python manage.py runserver 0.0.0.0:8000
+
+http://localhost:8000/ に接続
+
+
+⑦ docker内client環境構築
+以下コマンドでclientコンテナに入り、Vueアプリケーションを作成
+
+$ winpty docker-compose exec client sh
+
+$ npm install -g @vue/cli
+
+$ vue create . (色々と聞かれるが、全てyでOK。vueのバージョンを聞かれた際は3系にする）
+
+以下コマンドでサーバーを起動し、アクセスできるか確認
+$ npm run serve
+
+http://localhost:8080/ に接続
