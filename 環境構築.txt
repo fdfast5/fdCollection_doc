@@ -49,3 +49,13 @@ $ vue create . (色々と聞かれるが、全てyでOK。vueのバージョン�
 $ npm run serve
 
 http://localhost:8080/ に接続
+
+
+⑧ migration実行
+以下コマンドでもう一度serverコンテナに入り、マイグレーションを実行
+
+$ winpty docker-compose exec server bash
+
+$ python manage.py makemigrations ※もしかしたら不要？
+
+$ python manage.py migrate
