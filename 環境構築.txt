@@ -43,7 +43,11 @@ $ winpty docker-compose exec client sh
 
 $ npm install -g @vue/cli
 
-$ vue create . (色々と聞かれるが、全てyでOK。vueのバージョンを聞かれた際は3系にする）
+$ vue create .
+※1 Please pick a presetと聞かれたら Manually select features を選択し、RouterとVuexを追加する
+※2 Use history mode for router?と聞かれたらNoを選択し、以降は全てEnterでOK
+
+$ npm install --save axios vue-session
 
 以下コマンドでサーバーを起動し、アクセスできるか確認
 $ npm run serve
