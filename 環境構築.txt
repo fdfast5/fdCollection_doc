@@ -48,6 +48,7 @@ $ vue create .
 ※2 Use history mode for router?と聞かれたらNoを選択し、以降は全てEnterでOK
 
 $ vue add vuetify
+※Vuetify3を選択
 
 $ npm install --save axios
 
@@ -65,3 +66,14 @@ $ winpty docker-compose exec server bash
 $ python manage.py makemigrations ※もしかしたら不要？
 
 $ python manage.py migrate
+
+
+⑨環境変数設定
+テキストエディタ等で以下.env.exampleファイルと同じ階層に.envファイルを作成する
+
+対象階層
+./.env.example			#docker環境変数
+/client/mysite/.env.example	#フロントエンド環境変数
+/server/.env.example		#バックエンド環境変数
+
+exampleファイルの形式に合わせて.envファイルを編集する
