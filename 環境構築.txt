@@ -47,7 +47,9 @@ $ vue create .
 ※1 Please pick a presetと聞かれたら Manually select features を選択し、RouterとVuexを追加する
 ※2 Use history mode for router?と聞かれたらNoを選択し、以降は全てEnterでOK
 
-$ npm install --save axios vue-session
+$ vue add vuetify
+
+$ npm install --save axios
 
 以下コマンドでサーバーを起動し、アクセスできるか確認
 $ npm run serve
